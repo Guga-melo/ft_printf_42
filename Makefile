@@ -1,11 +1,11 @@
-NAME	= libftprint.a
+NAME	= libftprintf.a
 
-SRCS	= ft_printf.c ft_strchr.c ft_putchar_fd.c ft_putstr_fd.c
+SRCS	= ./src/ft_printf.c ./src/ft_printf_c.c ./src/ft_printf_s.c ./src/ft_printf_d.c
 
 OBJS	= $(SRCS:.c=.o)
 
 .c.o:
-			cc $(CFLAGS) -c $< -o $(<:.c=.o)
+			cc $(CFLAGS) -c $< -o $(<:.c=.o) -I ./include
 
 RM		= rm -f
 

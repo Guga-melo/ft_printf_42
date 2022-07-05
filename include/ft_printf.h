@@ -6,18 +6,18 @@
 /*   By: gussoare <gussoare@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 14:37:01 by gussoare          #+#    #+#             */
-/*   Updated: 2022/07/04 14:13:13 by gussoare         ###   ########.fr       */
+/*   Updated: 2022/07/05 11:09:15 by gussoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 # include <stdarg.h>
-# include "Libft/libft.h"
+# include "../Libft/libft.h"
 
-int		ft_printf(const char *, ...);
-char	*ft_strchr(const char *s, int c);
-int		ft_putchar_fd(char c, int fd);
-int		ft_putstr_fd(char *s, int fd);
+int	ft_printf(const char *, ...);
+int	ft_printf_c(char c);
+int	ft_printf_s(char *s);
+int	ft_printf_d(int n);
 
 #endif

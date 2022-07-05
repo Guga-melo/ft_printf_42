@@ -6,70 +6,66 @@
 /*   By: gussoare <gussoare@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 14:35:32 by gussoare          #+#    #+#             */
-/*   Updated: 2022/07/04 14:25:55 by gussoare         ###   ########.fr       */
+/*   Updated: 2022/07/05 11:21:24 by gussoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
-int	myprint(const char *str,unsigned int i,  va_list ap)	
+int	myprint(const char *str, int i,  va_list ap)	
 {
+	int	size;
+
+	size = 0;
 	if (str[i] == 'c')
-		return (ft_putchar_fd(va_arg(ap, int), 1));
-	/*else if (str == "s")
-	{
-		va_org(ap, *char);
-		va_putstr_fd(ap, 1);
-	}
+		size = ft_printf_c(va_arg(ap, int));
+	else if (str[i] == 's')
+		size = ft_printf_s(va_arg(ap, char*));
+	/*
 	else if (str == "p")
 	{
 	}
-	else if (str == "d")
+	*/
+	else if (str[i] == 'd')
+		size = ft_printf_d(va_arg(ap, int));
+	else if (str[i] == 'i')
+		size = ft_printf_d(va_arg(ap, int));
+	else if (str[i] == 'u')
+		size = ft_printf_u(va_arg(ap, unsigned int));
+	/*
+	else if (str[i] == 'x')
 	{
 	}
-	else if (str == "i")
+	else if (str[i] == 'X')
 	{
 	}
-	else if (str == "u")
-	{
-	}
-	else if (str == "x")
-	{
-	}
-	else if (str == "X")
-	{
-	}
-	else if (str == "%")
+	else if (str[i] == '%')
 	{
 	}
 	*/
+	return (size);
 }
+
 int	ft_printf(const char *str, ...)
 {
-	unsigned int	i;
-	unsigned int	som;
-	va_list			ap;
-	va_start(ap, str);
+	int		i;
+	int		sum;
+	va_list	ap;
 
 	i = 0;
-	som = 0;
+	sum = 0;
+	va_start(ap, str);
 	while (str[i] != 0)
 	{
 		if (str[i] == '%' && ft_strchr("cspdiuxX%", str[i + 1]))
 		{
 			i++;
-			som = som + myprint(&str, i, ap);
+			sum = sum + myprint(str, i++, ap);
 		}
 		write(1, &str[i], 1);
 		i++;
+		sum++;
 	}
 	va_end(ap);
-	return (som);
+	return (sum);
 }
-int	main()
-{
-	char g[5] = "tuca";
-	ft_printf(" guga %c buga", g);
-	return (0);
-}
-
