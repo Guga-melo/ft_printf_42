@@ -6,7 +6,7 @@
 /*   By: gussoare <gussoare@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 14:35:32 by gussoare          #+#    #+#             */
-/*   Updated: 2022/07/05 11:21:24 by gussoare         ###   ########.fr       */
+/*   Updated: 2022/07/05 13:40:35 by gussoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,12 @@ int	ft_printf(const char *str, ...)
 			i++;
 			sum = sum + myprint(str, i++, ap);
 		}
+		else
+		{
 		write(1, &str[i], 1);
 		i++;
 		sum++;
+		}
 	}
 	va_end(ap);
 	return (sum);

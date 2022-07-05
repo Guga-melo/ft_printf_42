@@ -6,7 +6,7 @@
 /*   By: gussoare <gussoare@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 08:31:02 by gussoare          #+#    #+#             */
-/*   Updated: 2022/07/05 11:17:31 by gussoare         ###   ########.fr       */
+/*   Updated: 2022/07/05 13:43:06 by gussoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,8 @@
 
 int main()
 {
-	char *d;
 	int i;
-
-	d = 0;
-	i = ft_printf("%s\n", d);
-	ft_printf("guga: %i ", i);
+	i = ft_printf("%u", 2147483648);
+	ft_printf("\n%d\n", i);
 	return (0);
 }
