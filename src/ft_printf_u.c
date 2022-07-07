@@ -6,7 +6,7 @@
 /*   By: gussoare <gussoare@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 11:21:57 by gussoare          #+#    #+#             */
-/*   Updated: 2022/07/05 13:44:11 by gussoare         ###   ########.fr       */
+/*   Updated: 2022/07/06 11:39:27 by gussoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,11 @@ static char	*ft_putnum(char *str, unsigned int nb, int i, int k)
 
 static char	*ft_iitoa(int n)
 {
-	char	*str;
+	char			*str;
 	unsigned int	nb;
-	int		i;
-	int		j;
-	int		k;
+	int				i;
+	int				j;
+	int				k;
 
 	nb = (unsigned int) n;
 	j = 0;

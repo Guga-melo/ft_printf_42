@@ -6,11 +6,12 @@
 /*   By: gussoare <gussoare@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 09:39:33 by gussoare          #+#    #+#             */
-/*   Updated: 2022/07/05 09:44:01 by gussoare         ###   ########.fr       */
+/*   Updated: 2022/07/06 11:37:41 by gussoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
 int	ft_printf_c(char c)
 {
 	ft_putchar_fd(c, 1);

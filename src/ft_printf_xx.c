@@ -1,24 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_s.c                                      :+:      :+:    :+:   */
+/*   ft_printf_xx.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gussoare <gussoare@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/05 09:53:01 by gussoare          #+#    #+#             */
-/*   Updated: 2022/07/06 11:38:47 by gussoare         ###   ########.fr       */
+/*   Created: 2022/07/06 08:53:14 by gussoare          #+#    #+#             */
+/*   Updated: 2022/07/06 11:41:25 by gussoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf_s(char *s)
+static int	ft_lennum(unsigned long n)
 {
-	if (!s)
+	int	size;
+
+	size = 0;
+	if (n == 0)
+		return (1);
+	while (n > 0)
 	{
-		ft_putstr_fd("(null)", 1);
-		return (6);
+		n = n / 16;
+		size++;
 	}
-	ft_putstr_fd(s, 1);
-	return (ft_strlen(s));
+	return (size);
+}
+
+int	ft_printf_xx(unsigned long n)
+{
+	int	size;
+
+	size = 0;
+	size = ft_lennum(n);
+	if (n >= 16)
+	{
+		ft_printf_xx(n / 16);
+		ft_printf_xx(n % 16);
+	}
+	else if (n <= 9)
+		ft_putchar_fd(n + '0', 1);
+	else
+		ft_putchar_fd(n - 10 + 'A', 1);
+	return (size);
 }

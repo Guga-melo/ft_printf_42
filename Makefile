@@ -1,7 +1,7 @@
 NAME	= libftprintf.a
 
-SRCS	= ./src/ft_printf.c ./src/ft_printf_c.c ./src/ft_printf_s.c ./src/ft_printf_d.c ./src/ft_printf_u.c \
-		  ./src/ft_printf_x.c ./src/ft_printf_X.c
+SRCS	= ./src/ft_printf.c ./src/ft_printf_c.c ./src/ft_printf_s.c ./src/ft_printf_d.c \
+		  ./src/ft_printf_u.c ./src/ft_printf_x.c ./src/ft_printf_xx.c
 
 
 OBJS	= $(SRCS:.c=.o)
